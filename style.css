@@ -1,0 +1,216 @@
+@property --myColor1 {
+    syntax: '<color>';
+    initial-value: rgba(255, 255, 255, 0.7);
+    inherits: false;
+}
+  
+@property --myColor2 {
+    syntax: '<color>';
+    initial-value: rgba(255, 255, 255, 0.4);
+    inherits: false;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom right, rgba(255, 0, 30, 0.7), rgba(191, 0, 255, 0.7));
+}
+
+.container-bg {
+    margin: 10px;
+    position: relative;
+    background: linear-gradient(to right, var(--myColor1) 50%, var(--myColor2) 50%);
+    width: 95vw;
+    height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+
+    transition: --myColor1 500ms ease-in-out;
+    transition: --myColor2 500ms ease-in-out;
+}
+
+.buttons {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+.btn {
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(0.9);
+
+    transition: opacity 200ms ease-in-out;
+    transition: border 200ms ease-in-out;
+    transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+    opacity: 1;
+    border: 1px solid rgba(255, 0, 51, 0.7);
+    transform: scale(1);
+}
+
+.btn:active {
+    background: rgba(255, 0, 51, 0.7);
+    color: white;
+}
+
+.container {
+    display: grid;
+    grid-template: 
+    'player1-container player2-container'
+    ;
+    height: 80vh;
+    text-align: center;
+    align-content: center;
+}
+
+.player1-container {
+    grid-area: 'player1-container';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 17vh;
+}
+.player2-container {
+    grid-area: 'player2-container';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 17vh;
+}
+
+.current-container {
+    background-color: rgba(255, 0, 51, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px 40px;
+    border-radius: 10px;
+    color: white;
+}
+
+h1 {
+    margin: 10px;
+    font-weight: 600;
+}
+
+h2 {
+    margin: 3px;
+    font-weight: 400;
+}
+
+.score {
+    font-size: 4em;
+    color: rgb(255, 0, 51);
+    font-weight: 400;
+}
+
+.dice {
+    height: 80px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 17vh;
+    margin-bottom: 10vh;
+    visibility: hidden;
+    scale: 1;
+
+    transition: scale 200ms ease-in-out;
+}
+
+.dice:hover {
+    scale: 1.1;
+}
+
+.new-game {
+    margin-top: 8vh;
+}
+
+.roll-dice {
+    margin-bottom: 5vh;
+}
+
+.hold {
+    margin-bottom: 8vh;
+}
+
+
+
+
+.container-bg-temp {
+    --myColor1: rgba(255, 255, 255, 0.4);
+    --myColor2: rgba(255, 255, 255, 0.7);
+    content: 'ok';
+}
+.sc1 {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
+.cc1 {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
+.sc2 {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
+.cc2 {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
+
+.sc1-temp {
+    opacity: 0.5;
+    transition: opacity 500ms ease-in-out;
+}
+.cc1-temp {
+    opacity: 0.5;
+    transition: opacity 500ms ease-in-out;
+}
+.sc2-temp {
+    opacity: 0.5;
+    transition: opacity 500ms ease-in-out;
+}
+.cc2-temp {
+    opacity: 0.5;
+    transition: opacity 500ms ease-in-out;
+}
+
+
+
+
+
+
+@media (min-width: 920px) {
+    .buttons {
+        width: 900px;
+    }
+    .container-bg {
+        width: 900px;
+    }
+}
