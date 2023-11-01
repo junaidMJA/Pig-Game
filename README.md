@@ -4,7 +4,7 @@
 
 ## Demo
 
-Play it here:   https://maiznadeem.github.io/Pig-Game/
+Play it here: https://pig-game-jzk1bviam-junaidmja.vercel.app/
 
 ## Online Multiplayer Pig Dice Game Instructions:
 
